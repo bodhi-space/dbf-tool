@@ -1,6 +1,6 @@
 {
   "name": "dbf-tool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "quick cli tool for analyzing dbf files",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,14 @@
     "fs-extra": "^0.18.2",
     "node-dbf": "^0.1.0"
   },
+  "bin": {
+    "dbf-tool": "./bin/dbf-tool.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bodhi-space/dbf-tool"
+  },
+  "preferGlobal": true,
   "devDependencies": {
     "chai": "latest",
     "grunt": "latest",
