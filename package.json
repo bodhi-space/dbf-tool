@@ -1,6 +1,6 @@
 {
   "name": "dbf-tool",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "quick cli tool for analyzing dbf files",
   "main": "index.js",
   "scripts": {
