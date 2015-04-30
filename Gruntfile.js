@@ -38,11 +38,10 @@ module.exports = function(grunt) {
                 files: [
                     { src: [ './bin/**'     ], dest: BUILD_DIR, expand: true },
                     { src: [ './lib/**'     ], dest: BUILD_DIR, expand: true },
-                    { src: [ './bin/**'     ], dest: BUILD_DIR, expand: true },
+                    { src: [ 'index.js'     ], dest: BUILD_DIR, expand: true },
                     { src: [ 'package.json' ], dest: BUILD_DIR, expand: true },
                     { src: [ 'README.md' ], dest: BUILD_DIR, expand: true },
                     { src: [ 'LICENSE' ], dest: BUILD_DIR, expand: true },
-                    { src: [ 'release-notes.txt' ], dest: BUILD_DIR, expand: true }
                 ]
             },
             coverage: {
