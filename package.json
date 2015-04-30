@@ -1,13 +1,13 @@
 {
-  "name": "dbf-cli.js",
+  "name": "dbf-tool",
   "version": "1.0.0",
-  "description": "",
+  "description": "quick cli tool for analyzing dbf files",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Brian Gaffney <brian.gaffney@hotschedules.com>",
+  "license": "APACHE2",
   "dependencies": {
     "commander": "^2.8.1",
     "fs-extra": "^0.18.2",
