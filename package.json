@@ -1,0 +1,37 @@
+{
+  "name": "dbf-cli.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.8.1",
+    "fs-extra": "^0.18.2",
+    "node-dbf": "^0.1.0"
+  },
+  "devDependencies": {
+    "chai": "latest",
+    "grunt": "latest",
+    "grunt-bump": "latest",
+    "grunt-contrib-clean": "latest",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-jshint": "latest",
+    "grunt-conventional-changelog": "^1.1.0",
+    "grunt-exec": "^0.4.6",
+    "grunt-jsonlint": "latest",
+    "grunt-mkdir": "^0.1.2",
+    "grunt-mocha-test": "latest",
+    "grunt-publish": "0.0.5",
+    "mocha": "latest",
+    "istanbul": "~0.3.5",
+    "grunt-mocha-istanbul": "~2.2.0",
+    "load-grunt-tasks": "~1.0.0",
+    "sinon": "~1.12.2",
+    "mock-fs": "~2.3.2",
+    "nock": "~0.56.0"
+  }
+}
