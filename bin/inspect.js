@@ -23,7 +23,7 @@ function getName(file){
 
 function mapType(header){
 
-    var type = 'String'
+    var type = 'String';
 
     switch (header.type){
         case 'C':
@@ -46,6 +46,19 @@ function mapType(header){
     }
 
     return type;
+}
+
+function shouldRequire(header){
+    var required = false;
+    switch (header.name){
+        case 'ID':
+        case 'NAME':
+            required = true;
+            break;
+        default:
+            break;
+    }
+    return required;
 }
 
 program
@@ -125,12 +138,39 @@ program
             type.properties = {};
 
             h.fields.forEach(function (field) {
-                type.properties[field.name] = {
-                    type: mapType(field)
+                var $ = type.properties[field.name] = {};
+                $.type =  mapType(field);
+                if(shouldRequire(field)){
+                    $.required = true;
                 }
             });
             console.log(JSON.stringify(type, null, '  '));
-        })
+        });
+        parser.parse();
+    });
+
+program
+    .command('map [path]')
+    .description('model the dbf as a type')
+    .option("-n, --name [name]", "The base directory")
+    .option("-e, --embeddded"  , "The base directory")
+    .option("-d, --working-dir [path]", "The base directory")
+    .action(function(path, options){
+
+        if(options.workingDir){
+            process.chdir(options.workingDir)
+        }
+
+        var parser = new Parser(getFile(path))
+        parser.on('header', function(h) {
+            var type = {};
+
+            h.fields.forEach(function (field) {
+                type[field.name.toLowerCase()] = field.name;
+            });
+
+            console.log(JSON.stringify(type, null, '  '));
+        });
         parser.parse();
     });
 
