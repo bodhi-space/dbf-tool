@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var program = require('commander');
-var Parser  = require('node-dbf');
+var Parser  = require('bodhi-dbf')().Parser;
 var fs      = require('fs');
 var path    = require('path');
 
@@ -30,13 +30,11 @@ function mapType(header){
             type = 'String';
             break;
         case 'N':
-            type = (header.decimalPlaces > 0) ? 'Decimal' : 'Integer';
+        case 'F':
+            type = (header.decimalPlaces > 0) ? 'Real' : 'Integer';
             break;
         case 'D':
             type = 'DateTime';
-            break;
-        case 'F':
-            type = 'Real';
             break;
         case 'L':
             type = 'Boolean';
