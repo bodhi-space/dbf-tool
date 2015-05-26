@@ -1,6 +1,6 @@
 {
   "name": "dbf-tool",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "quick cli tool for analyzing dbf files",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,7 @@
   "author": "Brian Gaffney <brian.gaffney@hotschedules.com>",
   "license": "APACHE2",
   "dependencies": {
+    "bodhi-dbf": "^1.0.6",
     "commander": "^2.8.1",
     "node-dbf": "^0.1.0"
   },
