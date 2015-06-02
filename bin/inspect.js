@@ -122,6 +122,7 @@ program
     .description('model the dbf as a type')
     .option("-n, --name [name]", "The base directory")
     .option("-e, --embeddded"  , "The base directory")
+    .option("--hash"           , "include an identity hash with the model")
     .option("-d, --working-dir [path]", "The base directory")
     .action(function(path, options){
 
@@ -143,6 +144,14 @@ program
                     $.required = true;
                 }
             });
+
+            if(options.hash){
+                type.properties.hash = {
+                    type: 'String',
+                    required: true
+                }
+            }
+
             console.log(JSON.stringify(type, null, '  '));
         });
         parser.parse();
