@@ -4,6 +4,7 @@ var program = require('commander');
 var Parser  = require('bodhi-dbf')().Parser;
 var fs      = require('fs');
 var path    = require('path');
+var pkg     = require('../package.json');
 
 function strEndsWith(str, suffix) {
     return str.match(suffix+"$")==suffix;
@@ -60,7 +61,7 @@ function shouldRequire(header){
 }
 
 program
-    .version('0.0.1')
+    .version(pkg.version)
 
 program
     .command('header [path]')
